@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+      <title>Q test ver 1.005.23</title>
+  	    <style>
+			* {
+  			  font-size: 25px;
+			}
+			td {
+			  border: 1px solid gray;
+			}
+			td.center {
+			  text-align: center;
+			}
+			.bbfont {
+			  font-size: 30px;
+			}
+			.bfont {
+			  font-size: 26px;
+			}
+			.hfont {
+			  text-decoration: underline;
+			}
+            ul {
+			  display:list-item; 
+			  list-style-position: inside;
+			  list-style-type: decimal;
+		    }
+            li {
+			  list-style-position: inside;
+			  list-style-type: circle;
+		    }
+			span.ei {
+			  font-size: 30px;
+			  font-weight: bold;
+			  color: red;
+			}
+			img {
+			  border: 1px solid #555;
+			}
+			.hidden_info {
+			  display: none;
+			}
+		</style>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRMD29VFBX"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-ZRMD29VFBX');
+		  var qq_videos = {
+		  	window_id_prefix: 'q',
+		  	file_path: './videos.txt',
+		  	video_urls: [],
+		  	max_seconds: 360,
+		  	windows_count: 5,
+		  	video_index: 0
+		  };
+		  var query_str = window.location.search;
+		  if (query_str.includes('m:')) {
+		  	var minutes = parseInt(query_str.substring(query_str.indexOf('m:') + 2));
+			qq_videos.max_seconds = 60 * minutes;
+		  }
+		  if (query_str.includes('w:')) {
+			var pos = query_str.indexOf('w:') + 2;
+		  	var windows_count = parseInt(query_str.substring(pos, pos + 1));
+			qq_videos.windows_count = windows_count;
+		  }
+		</script>
+  	    <script src="./fetch_plain_origin.js"></script>
+   </head>
+   <body onload="init1005();">
+	 <div>请在电脑用Chrome浏览器无痕模式打开。使用如出现问题请看下方使用说明。请检查每个腾讯页面的音量设置确保音量已打开。</div>
+	 <div>
+       <p>Q视频和搜索更新到2025.05.18</p>
+			 <p class="console"></p>
+	 </div>
+	 <div class="row">
+	     <div class="column">
+			 <button type="button" onclick="fetch1005(false);" class='search bbfont'>非V测试</button>
+	     </div>
+		 <br />
+	     <div class="column">
+			 <button type="button" onclick="fetch1005(true);" class='search bbfont'>V测试（需先在无痕模式下登录V账号）</button>
+	     </div>
+	 </div>
+	 <div class='hidden_info'>
+	   <input type="number" class="total_runs_override">
+	   <br />
+     </div>
+	 <br/>
+	<div>
+    <hr/>
+	 <div class="bbfont">使用说明</div>
+	<div>
+	 <div class="bfont">电脑</div>
+	 <ul>请先打开浏览器（<a href="https://www.google.com/chrome/">电脑下载Chrome</a>)，复制网址，粘贴到地址栏，并按回车。</ul>
+	 <ul>确保浏览器没有拦截广告：<a href="https://blog.csdn.net/culiuman3228/article/details/108785437">Chrome关闭拦截广告</a> <a href="https://support.apple.com/zh-cn/guide/safari/sfri40696/mac">Safari关闭拦截广告</a>  <a href="https://zh.wikihow.com/%E5%9C%A8Internet-Explorer%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E5%85%B3%E9%97%AD%E5%BC%B9%E5%87%BA%E7%AA%97%E5%8F%A3%E9%98%BB%E6%AD%A2%E7%A8%8B%E5%BA%8F">IE关闭拦截广告</a></ul>
+	 <ul>如果有V账号，点“V测试”，需要先打开<a href="https://v.qq.com/x/search/?q=%E8%82%96%E6%88%98%E4%BD%99%E7%94%9F%E8%AF%B7%E5%A4%9A%E6%8C%87%E6%95%99&stag=0&smartbox_ab=">鹅网站</a>VIP登录一次。没有V账号的话，就点“非V测试”。</ul>
+	</div>
+	<div>
+		<img src="./chrome.jpg" />
+	</div>
+   </body>
+</html>
